@@ -12,31 +12,32 @@ the first book is added using ObjectOutputStream
 while the others are added using AppendableObjectOutputStream
 to avoid Data Corruption.
 
-```public static void writeToBinary (String filename, Book obj, boolean append){
-				File file = new File (filename);
-				ObjectOutputStream out = null;
+```
+public static void writeToBinary (String filename, Book obj, boolean append){
+	File file = new File (filename);
+	ObjectOutputStream out = null;
 
-				try{
-						if (!file.exists () || !append) 
-                            out = new ObjectOutputStream (new FileOutputStream (filename));
-						else 
-                            out = new AppendableObjectOutputStream (new FileOutputStream (filename, append));
-						out.writeObject(obj);
-						out.flush();
-				}catch (FileNotFoundException e){
-					System.out.println("File Not Found Exception");
-					e.printStackTrace();
-				}catch(IOException e){
-					System.out.println("I/O Exception");
-					e.printStackTrace();
-				}finally{
-						try{
-								if (out != null) out.close();
-						}catch (Exception e){
-								e.printStackTrace ();
-						}
-				}
+	try{
+		if (!file.exists () || !append) 
+                	out = new ObjectOutputStream (new FileOutputStream (filename));
+		else 
+                        out = new AppendableObjectOutputStream (new FileOutputStream (filename, append));
+		out.writeObject(obj);
+		out.flush();
+	}catch (FileNotFoundException e){
+		System.out.println("File Not Found Exception");
+		e.printStackTrace();
+	}catch(IOException e){
+		System.out.println("I/O Exception");
+		e.printStackTrace();
+	}finally{
+		try{
+			if (out != null) out.close();
+		}catch (Exception e){
+			e.printStackTrace ();
 		}
+	}
+}
 ```
 
 ## Resources
