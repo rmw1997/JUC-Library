@@ -12,8 +12,7 @@ the first book is added using ObjectOutputStream
 while the others are added using AppendableObjectOutputStream
 to avoid Data Corruption.
 
-```
-public static void writeToBinary (String filename, Book obj, boolean append){
+```public static void writeToBinary (String filename, Book obj, boolean append){
 				File file = new File (filename);
 				ObjectOutputStream out = null;
 
@@ -37,8 +36,7 @@ public static void writeToBinary (String filename, Book obj, boolean append){
 								e.printStackTrace ();
 						}
 				}
-		}
-```
+		}```
 
 ## Resources
  - (https://stackoverflow.com/questions/4646272/appending-objects-to-a-binary-file)
