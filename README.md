@@ -12,7 +12,7 @@ the first book is added using ObjectOutputStream
 while the others are added using AppendableObjectOutputStream
 to avoid Data Corruption.
 
-```
+```java
 public static void writeToBinary (String filename, Book obj, boolean append){
 	File file = new File (filename);
 	ObjectOutputStream out = null;
