@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-A java program to keep a record of books in **JUC library**. 
+A java program to keep a record of books in **Jubail University College Library** or **JUC library**. 
 The user can either enter the information of **n** books using the scanner or read books information from any binary file.
 Whether a user writes or reads books, the books will be inserted at JUC Library (`BookDB.dat`).
 
