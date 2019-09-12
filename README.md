@@ -14,11 +14,11 @@ to avoid Data Corruption.
 
 ```java
 
-	if (!file.exists () || !append) 
-		out = new ObjectOutputStream (new FileOutputStream (filename));
-	else 
-		out = new AppendableObjectOutputStream (new FileOutputStream (filename, append));
-	out.writeObject(obj);
+if (!file.exists () || !append) 
+	out = new ObjectOutputStream (new FileOutputStream (filename));
+else 
+	out = new AppendableObjectOutputStream (new FileOutputStream (filename, append));
+out.writeObject(obj);
 
 ```
 
