@@ -140,7 +140,7 @@ public class JUC_Library {
 					System.out.println("File doesn't exist");
 				
 		}
-
+		//Inner Class
 		private static class AppendableObjectOutputStream extends ObjectOutputStream {
 					public AppendableObjectOutputStream(OutputStream out) throws IOException {
 						super(out);
