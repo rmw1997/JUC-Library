@@ -4,7 +4,7 @@
 
 A java program to keep a record of books in **Jubail University College Library** or **JUC library**. 
 The user can either enter the information of **n** books using the scanner or read books information from any binary file.
-Whether a user writes or reads books, the books will be inserted at JUC Library (`BookDB.dat`).
+Whether a user writes books manually or from a file, the books will be inserted at JUC Library (`BookDB.dat`).
 
 
 Each book is stored as an object of "Book" class using ObjectStream,
@@ -13,31 +13,13 @@ while the others are added using AppendableObjectOutputStream
 to avoid Data Corruption.
 
 ```java
-public static void writeToBinary (String filename, Book obj, boolean append){
-	File file = new File (filename);
-	ObjectOutputStream out = null;
 
-	try{
 		if (!file.exists () || !append) 
                 	out = new ObjectOutputStream (new FileOutputStream (filename));
 		else 
                         out = new AppendableObjectOutputStream (new FileOutputStream (filename, append));
 		out.writeObject(obj);
-		out.flush();
-	}catch (FileNotFoundException e){
-		System.out.println("File Not Found Exception");
-		e.printStackTrace();
-	}catch(IOException e){
-		System.out.println("I/O Exception");
-		e.printStackTrace();
-	}finally{
-		try{
-			if (out != null) out.close();
-		}catch (Exception e){
-			e.printStackTrace ();
-		}
-	}
-}
+
 ```
 
 ## Resources
